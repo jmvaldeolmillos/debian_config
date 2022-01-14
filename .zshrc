@@ -242,6 +242,10 @@ function fzf-lovely(){
 
 export FZF_DEFAULT_OPTS='--height 60% --layout=reverse --border'
 
+# Para Spark
+export SPARK_HOME=/home/jose/spark-3
+export PATH=$SPARK_HOME/bin:$PATH
+
 # >>> conda initialize >>>
 # !! Contents within this block are managed by 'conda init' !!
 __conda_setup="$('/home/jose/anaconda3/bin/conda' 'shell.zsh' 'hook' 2> /dev/null)"

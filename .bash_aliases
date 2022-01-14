@@ -79,7 +79,7 @@ alias catnl="/usr/bin/batcat --paging=never"
 alias ch-java="sudo update-alternatives --config java"
 alias ch-javac="sudo update-alternatives --config javac"
 
-#source <(kubectl completion zsh)
-alias kc=kubecolor
-alias kubectl="/usr/local/bin/kubectl"
+# Para Spark
+export SPARK_HOME=/home/jose/spark-3
+export PATH=$SPARK_HOME/bin:$PATH
 
