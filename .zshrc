@@ -77,7 +77,7 @@ ZSH_THEME="powerlevel10k/powerlevel10k"
 # Custom plugins may be added to $ZSH_CUSTOM/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
-plugins=(git)
+plugins=(git autopep8 dnf docker-compose fzf pipenv sbt scala)
 
 source $ZSH/oh-my-zsh.sh
 
@@ -125,9 +125,9 @@ alias ls="lsd --group-dirs=first"
 #fix obvious typo's
 alias cd..='cd ..'
 alias pdw="pwd"
-alias udpate='sudo apt update'
-alias upate='sudo apt update'
-alias update='sudo apt update'
+alias udpate='sudo dnf update'
+alias upate='sudo dnf update'
+alias update='sudo dnf update'
 
 ## Colorize the grep command output for ease of use (good for log files)##
 alias grep='grep --color=auto'
@@ -147,10 +147,10 @@ alias wget="wget -c"
 alias userlist="cut -d: -f1 /etc/passwd"
 
 # Aliases for software managment
-alias upgrade="sudo apt upgrade"
-alias ugprade="sudo apt upgrade"
+alias upgrade="sudo dnf upgrade"
+alias ugprade="sudo dnf upgrade"
 
-alias clean="sudo apt autoremove && sudo apt autoclean"
+alias clean="sudo dnf autoremove"
 
 #ps
 alias ps="ps auxf"
@@ -185,17 +185,14 @@ alias yta-vorbis="youtube-dl --extract-audio --audio-format vorbis "
 alias yta-wav="youtube-dl --extract-audio --audio-format wav "
 alias ytv-best="youtube-dl -f bestvideo+bestaudio "
 
-#Cleanup orphaned packages
-alias cleanup='sudo apt autoclean; sudo apt autoremove'
-
 #shutdown or reboot
 alias ssn="sudo shutdown now"
 alias sr="sudo reboot"
 
 # Para bat
-alias cat="/usr/bin/batcat"
+alias cat="/usr/bin/bat"
 alias catn="/usr/bin/cat"
-alias catnl="/usr/bin/batcat --paging=never"
+alias catnl="/usr/bin/bat --paging=never"
 
 # Para el man
 # Set 'man' colors
@@ -261,9 +258,8 @@ fi
 unset __conda_setup
 # <<< conda initialize <<<
 
+[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
+
 #THIS MUST BE AT THE END OF THE FILE FOR SDKMAN TO WORK!!!
 export SDKMAN_DIR="$HOME/.sdkman"
 [[ -s "$HOME/.sdkman/bin/sdkman-init.sh" ]] && source "$HOME/.sdkman/bin/sdkman-init.sh"
-
-[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
-
